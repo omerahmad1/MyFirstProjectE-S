@@ -8,5 +8,18 @@ import com.firstproject.Entities.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 
 	Employee findById(int id);
+
+	
+	Employee findByEmail(String email);
+
+
+	Integer deleteById(int id);
+
+
+	Employee findOneById(Integer id);
+
+
+
+
 	
 }

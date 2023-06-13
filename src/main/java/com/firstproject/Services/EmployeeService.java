@@ -3,11 +3,13 @@ package com.firstproject.Services;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import com.firstproject.Entities.Employee;
 import com.firstproject.Models.DeleteEmployeeResponse;
 import com.firstproject.Models.GetAllEmployeeResponse;
@@ -33,12 +35,12 @@ public class EmployeeService {
 			return response;
 		}
 		Employee emp = new Employee();
-		emp.setId(request.getId());
+//		emp.setId(request.getId());
 		emp.setName(request.getName());
 		emp.setEmail(request.getEmail());
 		emp.setSalary(request.getSalary());
-		employeeRepository.save(emp);
-		response.setCode("200");
+	    employeeRepository.save(emp);
+	    response.setCode("200");
 		response.setMessage("Success");
 		return response;
 	}
@@ -67,7 +69,7 @@ public class EmployeeService {
 		Employee employee = employeeRepository.findOneById(id);
 		if (employee == null) {
 			response.setCode("100");
-			response.setMessage("Employee not exists");
+			response.setMessage("No Data Found");
 			return response;
 		}
 		response.setEmp(employee);
@@ -84,17 +86,16 @@ public class EmployeeService {
 			return response;
 		}
 		response.setCode("100");
-		response.setMessage("Employee not Exists");
+		response.setMessage("No data Found");
 
 		return response;
 	}
 
-	public UpdateEmployeeResponse updateEmployee(UpdateEmployeeRequest request, int id,
+	public UpdateEmployeeResponse updateEmployee(UpdateEmployeeRequest request, Integer id,
 			UpdateEmployeeResponse response) {
 
-		Employee employee = employeeRepository.findById(id);
+		Employee employee = employeeRepository.getOneById(id);
 		if (employee != null) {
-			employee.setId(request.getId());
 			employee.setName(request.getName());
 			employee.setSalary(request.getSalary());
 			employeeRepository.save(employee);
@@ -107,7 +108,8 @@ public class EmployeeService {
 		} else {
 
 			response.setCode("100");
-			response.setMessage("Employee not exists");
+			response.setMessage("No data found");
+			response.setEmp(employee);
 			return response;
 
 		}

@@ -1,5 +1,62 @@
-{"properties": [{
-  "name": "spring.jpa.hibernate.generate-ddl",
-  "type": "java.lang.String",
-  "description": "A description for 'spring.jpa.hibernate.generate-ddl'"
-}]}
+{"properties": [
+  {
+    "name": "spring.jpa.hibernate.generate-ddl",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.hibernate.generate-ddl'"
+  },
+  {
+    "name": "h2.console.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'h2.console.enabled'"
+  },
+  {
+    "name": "h2.console.datasource.url",
+    "type": "java.lang.String",
+    "description": "A description for 'h2.console.datasource.url'"
+  },
+  {
+    "name": "h2.console.datasource.password",
+    "type": "java.lang.String",
+    "description": "A description for 'h2.console.datasource.password'"
+  },
+  {
+    "name": "h2.console.datasource.username",
+    "type": "java.lang.String",
+    "description": "A description for 'h2.console.datasource.username'"
+  },
+  {
+    "name": "h2.console.jpa.database-platform",
+    "type": "java.lang.String",
+    "description": "A description for 'h2.console.jpa.database-platform'"
+  },
+  {
+    "name": "h2.console.jpa.hibernate.ddl-auto",
+    "type": "java.lang.String",
+    "description": "A description for 'h2.console.jpa.hibernate.ddl-auto'"
+  },
+  {
+    "name": "h2.console.jpa.hibernate.generate-ddl",
+    "type": "java.lang.String",
+    "description": "A description for 'h2.console.jpa.hibernate.generate-ddl'"
+  },
+  {
+    "name": "h2.pathmatch.matching-strategy",
+    "type": "java.lang.String",
+    "description": "A description for 'h2.pathmatch.matching-strategy'"
+  },
+  {
+    "name": "h2.mvc",
+    "type": "java.lang.String",
+    "description": "A description for 'h2.mvc'"
+  },
+  {
+    "name": "spring.hibernate.ddl-auto",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.hibernate.ddl-auto'"
+  },
+  {
+    "name": "spring.hibernate.generate-ddl",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.hibernate.generate-ddl'"
+  }
+]}
